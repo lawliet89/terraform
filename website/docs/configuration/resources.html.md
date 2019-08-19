@@ -261,6 +261,10 @@ This object has one attribute:
 - `count.index` — The distinct index number (starting with `0`) corresponding
   to this instance.
 
+The `count` object is not available within nested `provisioner` or `connection`
+blocks. To work around this, these blocks can reference resource attributes via
+a special `self` object.
+
 #### Referring to Instances
 
 When `count` is set, Terraform distinguishes between the resource block itself
@@ -356,6 +360,10 @@ This object has two attributes:
 - `each.key` — The map key (or set member) corresponding to this instance.
 - `each.value` — The map value corresponding to this instance. (If a set was
   provided, this is the same as `each.key`.)
+
+The `each` object is not available within nested `provisioner` or `connection`
+blocks. To work around this, these blocks can reference resource attributes via
+a special `self` object.
 
 #### Referring to Instances
 
